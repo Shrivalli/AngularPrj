@@ -1,0 +1,21 @@
+<div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+      <br/>
+      This is my first page
+    </h1>
+    <h2> Welcome CTS </h2>
+    <div>
+      <h3> Your Name is {{studentname}} </h3>
+      <h3> Enter Your Name </h3>
+      <input type="text" [(ngModel)]="studentname"/>
+      <br/>
+      <!-- <img src="assets/web.png" height=200 width =200/> -->
+      <img [src]="imagepath" height="100" width="100"/>
+      <br/>
+      <input type="button" class="btn btn-success" value="Click Me"
+      (click)="abc()"/>
+    </div>
+  </div>
+  
+  

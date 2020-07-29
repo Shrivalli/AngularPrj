@@ -1,0 +1,12 @@
+<p>emplist works!</p>
+
+        <div>
+        <input type="submit" (click)="ShowEmployees()" value="Show Employees"/>
+        </div>
+        <div *ngFor="let e of results">
+            {{e.eid}}
+            {{e.ename}}
+            {{e.doj|date}}
+            {{e.etype}}
+            {{e.salary}}
+        </div>

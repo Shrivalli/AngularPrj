@@ -1,0 +1,29 @@
+
+<!-- <div *ngIf="names">
+        <h1> List of Names</h1>
+<ol>
+    <li *ngFor="let i of names">
+        {{i}}
+    </li>
+</ol>
+</div> -->
+
+<div *ngFor="let e of this.empservice.emps">
+        {{e.eid}}
+        {{e.ename}}
+        {{e.doj|date}}
+    </div>
+
+<!-- <div *ngIf="isloggedin; else abc">
+<h1>Hello Admin </h1>
+</div>
+<ng-template #abc>
+       <h1> Sorry you have logged out</h1>
+</ng-template> -->
+
+<!-- 
+<div>
+    your birthdate is {{bdate|date}}
+    Your name is {{names[0]|uppercase}}
+    your credit is {{amt|currency:$}}
+</div> -->

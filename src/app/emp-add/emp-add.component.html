@@ -1,0 +1,59 @@
+<p>emp-add works!</p>
+<div class="container">
+<div class="panel-body">
+        <div class="form-group" [class.has-error]="eid.invalid && eid.touched" [class.has-success]="eid.valid" >
+          <label for="eid"> Enter your ID :</label>
+          <input required type="text" name="eid" [(ngModel)]="e.eid"
+          #eid="ngModel" id="eid" class="form-control" >
+          <span class="help-block" *ngIf="eid.invalid">
+           ID is Required
+          </span>
+        </div>
+      </div>
+     
+        <div class="form-group" [class.has-error]="name.invalid && name.touched" [class.has-success]="name.valid" >
+                <label for="name"> Enter your Name :</label>
+                <input required type="text" name="name" [(ngModel)]="e.ename"
+                #name="ngModel" id="name" class="form-control" >
+                <span class="help-block" *ngIf="name.invalid">
+                 Name is Required
+                </span>
+              </div>
+
+              <div class="form-group" [class.has-error]="sal.invalid && sal.touched" [class.has-success]="sal.valid" >
+                    <label for="salary"> Enter your Salary :</label>
+                    <input required type="number" name="sal" [(ngModel)]="e.salary"
+                    #sal="ngModel" id="sal" class="form-control" >
+                    <span class="help-block" *ngIf="sal.invalid">
+                     Salary is Required
+                    </span>
+                  </div>
+
+                  <div class="form-group" [class.has-error]="etype.invalid && etype.touched" [class.has-success]="etype.valid" >
+                        <label for="etype"> Enter your Type :</label>
+                        <input required type="text" name="etype" [(ngModel)]="e.etype"
+                        #etype="ngModel" id="etype" class="form-control" >
+                        <span class="help-block" *ngIf="etype.invalid">
+                         Type is Required
+                        </span>
+                      </div>
+
+                      <div class="form-group" [class.has-error]="doj.invalid && doj.touched" [class.has-success]="doj.valid" >
+                            <label for="doj"> Enter your Doj :</label>
+                            <input required type="date" name="doj" [(ngModel)]="e.doj"
+                            #doj="ngModel" id="doj" class="form-control" >
+                            <span class="help-block" *ngIf="doj.invalid">
+                             DOJ is Required
+                            </span>
+                          </div>
+<div>
+<input type="submit" (click)="AddEmp()" value="Add Employee"/>
+</div>
+<div *ngFor="let e of employees">
+    {{e.eid}}
+    {{e.ename}}
+    {{e.doj|date}}
+    {{e.etype}}
+    {{e.salary}}
+</div>
+</div>
