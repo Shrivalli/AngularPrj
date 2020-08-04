@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { EmpService } from '../emp.service';
 import { Emp } from '../Emp.model';
 import {Observable} from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-emplist',
@@ -18,11 +19,23 @@ results:Emp[];
   ShowEmployees(){
 this.empservice.getEmployees().subscribe(data=>
   {
-    {{debugger}}
     this.results=data;
     console.log(data);
   })
   }
 
+  DeleteEmployee(eid)
+  {
+    this.empservice.delemp(eid).subscribe(data=>
+      {
+      alert(" Deletion successfull")
+      },
+      err=>{"Error:----"+console.log(err)}
+       )
+      
+  }
+
+  
+  
   
 }

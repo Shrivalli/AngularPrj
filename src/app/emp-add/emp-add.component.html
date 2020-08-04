@@ -3,7 +3,7 @@
 <div class="panel-body">
         <div class="form-group" [class.has-error]="eid.invalid && eid.touched" [class.has-success]="eid.valid" >
           <label for="eid"> Enter your ID :</label>
-          <input required type="text" name="eid" [(ngModel)]="e.eid"
+          <input required type="number" name="eid" [(ngModel)]="e.eid"
           #eid="ngModel" id="eid" class="form-control" >
           <span class="help-block" *ngIf="eid.invalid">
            ID is Required

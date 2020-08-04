@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { SampleComponent } from './sample/sample.component';
 import { EmpAddComponent } from './emp-add/emp-add.component';
 import { EmplistComponent } from './emplist/emplist.component';
+import { EmpeditComponent } from './empedit/empedit.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
 {
   path:'ShowEmployees',
   component:EmplistComponent
+},
+{
+  path:'EditEmployee',
+  component:EmpeditComponent
 }
 ];
 

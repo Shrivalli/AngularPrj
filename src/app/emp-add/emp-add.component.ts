@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmpService } from '../emp.service';
 import { Emp } from '../Emp.model';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-emp-add',
@@ -20,7 +21,7 @@ e:Emp =
 
  employees:Emp[];
 
-  constructor(private empservice:EmpService) { }
+  constructor(private empservice:EmpService,private http:HttpClient) { }
    
   ngOnInit() {
   }
@@ -28,12 +29,26 @@ e:Emp =
   AddEmp()
   {
     // this.e.eid=1001;
-    // this.e.ename="Valli";
-     //this.e.etype=true;
-     //this.e.salary=78000;
-     //this.e.doj=new Date("6/7/2020");
-  this.empservice.AddEmploye(this.e);
-  this.employees=this.empservice.emps;
-  }
+     //this.e.ename="Valli";
+    //this.e.etype=true;
+    //this.e.salary=78000;
+    //this.e.doj=new Date("6/7/2020");
+ // this.empservice.AddEmploye(this.e);
+ //this.employees=this.empservice.emps;
+//  this.empservice.AddEmploye(this.e).subscribe(res=>{
+//   alert(" Transaction successfull");
+//  },err=>{"Error:----"+console.log(err)}
+// )
+  //console.log(this.emps.length);
+  const httpHeaders = {headers:new HttpHeaders({'Content-Type': 'application/json'}) };
+console.log(this.e);
 
+  return this.http.post('http://localhost:27568/api/emps',this.e).subscribe(
+    res=>{alert('done');
+  },
+  err=>{"Error: "+console.log(err)}
+ )
 }
+}
+
+

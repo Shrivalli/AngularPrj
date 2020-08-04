@@ -11,6 +11,7 @@ import { SampleComponent } from './sample/sample.component';
 import { EmpAddComponent } from './emp-add/emp-add.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EmplistComponent } from './emplist/emplist.component';
+import { EmpeditComponent } from './empedit/empedit.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EmplistComponent } from './emplist/emplist.component';
     RegisterComponent,
     SampleComponent,
     EmpAddComponent,
-    EmplistComponent
+    EmplistComponent,
+    EmpeditComponent
   ],
   imports: [
     BrowserModule,
